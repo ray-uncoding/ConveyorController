@@ -51,36 +51,36 @@ void loop() {
   // 可以根據實際需求修改下方的判斷
   switch (code) {
     case 0b000:
-      // 三個都沒偵測到
-      digitalWrite(RELAY_PIN, 0); // 運行
+      // 三個都有偵測到
+      digitalWrite(RELAY_PIN, 0); // 停止
       break;
     case 0b001:
-      // 只有夾爪感測器有偵測到
-      digitalWrite(RELAY_PIN, 0); // 運行
+      // 只有夾爪感測器沒偵測到
+      digitalWrite(RELAY_PIN, 0); // 停止
       break;
     case 0b010:
-      // 只有抓取區感測器有偵測到
-      digitalWrite(RELAY_PIN, 0); // 運行
+      // 只有抓取區感測器沒偵測到
+      digitalWrite(RELAY_PIN, 0); // 停止
       break;
     case 0b011:
       // 抓取區與夾爪感測器有偵測到
-      digitalWrite(RELAY_PIN, 0); // 運行
+      digitalWrite(RELAY_PIN, 0); // 停止
       break;
     case 0b100:
-      // 只有等待區感測器有偵測到
-      digitalWrite(RELAY_PIN, 0); // 運行
+      // 只有等待區感測器沒偵測到
+      digitalWrite(RELAY_PIN, 0); // 停止
       break;
     case 0b101:
-      // 等待區與夾爪感測器有偵測到
-      digitalWrite(RELAY_PIN, 0); // 運行
+      // 等待區與夾爪感測器沒偵測到
+      digitalWrite(RELAY_PIN, 0); // 停止
       break;
     case 0b110:
-      // 等待區與抓取區感測器有偵測到
-      digitalWrite(RELAY_PIN, 1); // 停止
+      // 等待區與抓取區感測器沒偵測到
+      digitalWrite(RELAY_PIN, 1); // 運行
       break;
     case 0b111:
-      // 三個都偵測到
-      digitalWrite(RELAY_PIN, 1); // 停止
+      // 三個都沒偵測到
+      digitalWrite(RELAY_PIN, 1); // 運行
       break;
     default:
       digitalWrite(RELAY_PIN, 1); // 當以上狀態都失效(系統當機時)，停止
