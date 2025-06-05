@@ -48,31 +48,31 @@ void loop() {
   Serial.println(clawSensor);
 
   // 根據不同編碼決定輸送帶動作
-  // 你可以根據實際需求修改下方的判斷
+  // 可以根據實際需求修改下方的判斷
   switch (code) {
     case 0b000:
       // 三個都沒偵測到
-      digitalWrite(RELAY_PIN, 0); // 停止
+      digitalWrite(RELAY_PIN, 0); // 運行
       break;
     case 0b001:
       // 只有夾爪感測器有偵測到
-      digitalWrite(RELAY_PIN, 0); // 停止
+      digitalWrite(RELAY_PIN, 0); // 運行
       break;
     case 0b010:
       // 只有抓取區感測器有偵測到
-      digitalWrite(RELAY_PIN, 0); // 停止
+      digitalWrite(RELAY_PIN, 0); // 運行
       break;
     case 0b011:
       // 抓取區與夾爪感測器有偵測到
-      digitalWrite(RELAY_PIN, 0); // 停止
+      digitalWrite(RELAY_PIN, 0); // 運行
       break;
     case 0b100:
       // 只有等待區感測器有偵測到
-      digitalWrite(RELAY_PIN, 0); // 停止
+      digitalWrite(RELAY_PIN, 0); // 運行
       break;
     case 0b101:
       // 等待區與夾爪感測器有偵測到
-      digitalWrite(RELAY_PIN, 0); // 停止
+      digitalWrite(RELAY_PIN, 0); // 運行
       break;
     case 0b110:
       // 等待區與抓取區感測器有偵測到
@@ -83,7 +83,7 @@ void loop() {
       digitalWrite(RELAY_PIN, 1); // 停止
       break;
     default:
-      digitalWrite(RELAY_PIN, 1); // 預設停止
+      digitalWrite(RELAY_PIN, 1); // 當以上狀態都失效(系統當機時)，停止
       break;
   }
 
