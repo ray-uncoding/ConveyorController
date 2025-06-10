@@ -84,7 +84,8 @@ void loop() {
       break;
     default:
       digitalWrite(RELAY_PIN, 1); // 當以上狀態都失效(系統當機時)，停止
-      break;
+      break;636
+      +
   }
 
   last_waitSensor = waitSensor;
